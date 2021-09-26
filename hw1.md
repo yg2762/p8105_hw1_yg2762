@@ -109,5 +109,39 @@ vec_factor_num=as.numeric(problem1_df$vec_factor)
 mean(vec_factor_num)
 ```
 
-as.numeric function convert elements in vectors into numeric version, so
-we can calculate the mean.
+`as.numeric` function converts elements in vectors into numeric version,
+so we can calculate the mean.
+
+# Problem 2
+
+## load dataset
+
+``` r
+data("penguins", package = "palmerpenguins")
+penguins
+
+ncol(penguins)
+nrow(penguins)
+
+mean(penguins$"flipper_length_mm",na.rm=TRUE)
+mean
+```
+
+The data contain `ncol("penguins")` columns and `nrow(penguins)` rows.
+The mean flipper\_length is
+`mean(penguins$"flipper_length_mm",na.rm=TRUE)`.
+
+``` r
+data("penguins", package = "palmerpenguins")
+ggplot(penguins,aes(x=bill_length_mm, y=flipper_length_mm,color=species))+ geom_point()
+```
+
+    ## Warning: Removed 2 rows containing missing values (geom_point).
+
+![](hw1_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+
+``` r
+ggsave("scatter_plot.pdf", height=4, width=6)
+```
+
+    ## Warning: Removed 2 rows containing missing values (geom_point).
