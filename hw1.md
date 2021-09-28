@@ -37,10 +37,10 @@ a factor vector of length 10, with 3 different factor “levels”.
 set.seed(1)
 problem1_df=
   tibble( 
-    norm_samp=rnorm(10),
-    norm_samp_pos=norm_samp>0,
-    vec_char=c("1","2","3","4","5","6","7","8","9","10"),
-    vec_factor=factor(c("1","2","3","2","1","3","1","3","2","1"))
+    norm_samp = rnorm(10),
+    norm_samp_pos = norm_samp>0,
+    vec_char = c("1","2","3","4","5","6","7","8","9","10"),
+    vec_factor = factor(c("1","2","3","2","1","3","1","3","2","1"))
   )
 problem1_df
 ```
@@ -69,21 +69,21 @@ mean_samp
     ## [1] 0.1322028
 
 ``` r
-mean_pos=mean(pull(problem1_df, norm_samp_pos))
+mean_pos = mean(pull(problem1_df, norm_samp_pos))
 mean_pos
 ```
 
     ## [1] 0.6
 
 ``` r
-mean_vec_char=mean(pull(problem1_df, vec_char))
+mean_vec_char = mean(pull(problem1_df, vec_char))
 ```
 
     ## Warning in mean.default(pull(problem1_df, vec_char)): argument is not numeric or
     ## logical: returning NA
 
 ``` r
-mean_vec_factor=mean(pull(problem1_df,vec_factor))
+mean_vec_factor = mean(pull(problem1_df,vec_factor))
 ```
 
     ## Warning in mean.default(pull(problem1_df, vec_factor)): argument is not numeric
@@ -98,15 +98,15 @@ message in the output).
 
 ``` r
 pull(problem1_df,norm_samp_pos)
-pos_num=as.numeric(problem1_df$norm_samp_pos)
+pos_num = as.numeric(problem1_df$norm_samp_pos)
 mean(pos_num)
 
 pull(problem1_df,vec_char)
-vec_char_num=as.numeric(problem1_df$vec_char)
+vec_char_num = s.numeric(problem1_df$vec_char)
 mean(vec_char_num)
                    
 pull(problem1_df,vec_factor)
-vec_factor_num=as.numeric(problem1_df$vec_factor)
+vec_factor_num = as.numeric(problem1_df$vec_factor)
 mean(vec_factor_num)
 ```
 
@@ -146,11 +146,11 @@ flipper\_length is `mean(penguins$"flipper_length_mm",na.rm=TRUE)`.
 ## making plot
 
 ``` r
-ggplot(penguins,aes(x=bill_length_mm, y=flipper_length_mm,color=species))+ geom_point()
+ggplot(penguins,aes(x = bill_length_mm, y = flipper_length_mm,color=species)) + geom_point()
 ```
 
 ![](hw1_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 ``` r
-ggsave("scatter_plot.pdf", height=4, width=6)
+ggsave("scatter_plot.pdf", height = 4, width = 6)
 ```
